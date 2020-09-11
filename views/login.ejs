@@ -1,0 +1,231 @@
+
+<html>
+<head>
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+ <link rel="stylesheet" type="text/css" href="navbar2.css">
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <!--script src="Sample.js"></script>-->
+</head>
+<style>
+.booking
+{
+    background-image:url('Sunset.jpg');
+    background-size:cover;
+}
+form 
+{
+  top:20px;
+  left:120px;
+	position: relative;
+	background: #fff;
+	max-width: 642px;
+	width: 100%;
+	margin: auto;
+	padding: 25px 25px 35px;
+  border:2px solid Black;
+}
+.form-group
+{
+	position: relative;
+	margin-bottom: 20px;
+}
+.form-control {
+	background-color: #fff;
+	height: 65px;
+	padding: 0px 15px;
+	padding-top: 24px;
+	color: #191a1e;
+	border: 2px solid #dfe5e9;
+	font-size: 16px;
+	font-weight: 700;
+	box-shadow: none;
+}
+.form-control::-webkit-input-placeholder {
+	color:#dfe5e9;
+}
+.form-control:focus {
+	background:lightgoldenrodyellow;
+}
+.form-label
+{
+	position: absolute;
+	top: 6px;
+	left: 20px;
+	font-weight: 700;
+	text-transform: uppercase;
+	line-height: 24px;
+	height: 24px;
+	font-size: 12px;
+	color:lightslategray;
+}
+th
+{
+ border:1px solid;
+ padding:8px;
+}
+ label 
+{
+	position: relative;
+	padding-top: 4px;
+	padding-left: 30px;
+	font-weight: 700;
+	color: #191a1e;
+}
+
+.booking-cta {
+    margin-top:120px;
+}
+
+ h1 
+ {
+	font-size: 52px;
+	text-transform: uppercase;
+	color: #000000;
+	font-weight: 400;
+  font-family:script;
+}
+ p 
+{
+	font-size: 22px;
+	color: #FFFFFF;
+  font-style:Alex Brush;
+}
+.con
+{
+  width: 580px;
+  border: 1px solid;
+}
+
+.container1 {
+  position: relative;
+  width:140px;
+  height:50px;
+  margin:0 0 0 20px;
+}
+
+.pack {
+    font-size:20px;
+  display: block;
+  width:140px;
+  height:50px;
+  transition:all .5s ease;
+  z-index:1;
+  color:white;
+  font-family:arial;
+  background-color:#3D84A8;
+  color:white;
+}
+
+.overlay {
+  position: absolute;
+  bottom: 0;
+  left: 100%;
+  right: 0;
+  background-color: #008CBA;
+  overflow: hidden;
+  width: 0;
+  height: 100%;
+  position:absolute;
+  transition:all .5s ease;
+  z-index:7;
+}
+
+.container1:hover .overlay {
+  width: 100%;
+  left: 0;
+}
+
+.text 
+{
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.button1
+{ 
+     color:white;
+    width:140px;
+    height:50px;
+    background-color:#222831;
+}
+</style>
+<body class="booking">
+<div class="container">
+<div class="row">
+<div class="col-md-7 col-md-offset-1">
+<center><h1>TODO</h1></center>
+<form action="/HOME" method="POST">
+<div class="row">
+<div class="col-md-6">
+<div class="form-group">
+<span class="form-label">Task Name</span>
+<input class="form-control" type="text" name="name"  value="">
+</div>
+</div>
+<div class="col-md-6">
+<div class="form-group">
+<span class="form-label">Task Description</span>
+<input class="form-control" type="text" name="Desc" value="">
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-6">
+<div class="form-group">
+<span class="form-label">Creator</span>
+<input class="form-control" type="text" name="Creator">
+</div>
+</div>
+<div class="col-md-6">
+<div class="form-group">
+<span class="form-label">Duration</span>
+<input class="form-control" type="Number" name="Duration">
+</div>
+</div>
+</div>
+<div class="row">
+<div class="container1">
+  <button class="pack" name="submit">ADD</button>
+  <div class="overlay">
+      <div class="text"><button type="Submit" class="button1" name="submit">ADD</button></div>
+  </div>
+</div>
+</div>
+<br>
+<div>
+  <div class="row">
+    <table border="1px" >
+        <tr>
+          <th>Task_Name</th>
+          <th>Task_Description</th>
+          <th>Created</th>
+          <th>Duration</th>
+          <th>Created At</th>
+        </tr>
+        <% if(records.length>0) {%>
+        <%  records.forEach(function(row){%>
+        <tr>
+          <td><%= row.task_name%></td>
+          <td><%= row.task_description%></td>
+          <td><%= row.creator%></td>
+          <td><%= row.duration%></td>
+          <td><%= row.createdAt%></td>
+        </tr>
+        <%})}%>
+      </table>
+    </div>
+</div>
+</div>  
+</form>
+</div>
+</div>
+</div>
+<br>
+<br>
+<br>   
+</body>
+</html>
