@@ -5,6 +5,7 @@ const Task= require('./database/Schema');
 var urlencodedParser = bodyParser.urlencoded({ extended:false });
 const router=express();
 router.set('view engine','ejs');
+const port=process.env.PORT || 8000
 router.get('/Home',async(req,res)=>
 {
     try
@@ -60,7 +61,7 @@ catch(e)
     res.status(400).send(e);
 }
 })
-router.listen(8000,()=>
+router.listen(port,()=>
 {
-    console.log("server running on port no 8000");
+    console.log("server running on port no "+port);
 })
