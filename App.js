@@ -35,7 +35,7 @@ router.post('/HOME',urlencodedParser,async(req,res)=>
     })
     const r=await add.save();
     const _id=r._id;
-    setTimeout(()=>
+    setInterval(()=>
     {
        var run=async()=>
        {
